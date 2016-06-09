@@ -1,0 +1,71 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type='text/javascript' src='query.js'></script>
+</head>
+
+<div class="container-fluid">
+    <body>
+
+    <label>Search Criteria </label>
+    <br>
+
+
+    <!-- Labels and inputs for Categories and Search Item. -->
+
+
+    <label><b>Search By: </b></label>
+    <select size="1" id="search">
+        <option value=""> - Select -</option>
+        <option value="name_txt">Title</option>
+        <option value="author_txt">Author</option>
+        <option value="genre_s">Genre</option>
+        <option value="id">ISBN</option>
+        <option value="price">Price</option>
+    </select>
+    <br>
+
+    <label><b>Search: </b></label>
+
+    <input type="text" name="message" id="user_input">
+
+    <br>
+
+
+    <br>
+
+    <button class="btn btn-primary" type="submit" id="click">Search</button>
+    <!-- <input class="btn btn-primary" type="submit" onclick="showInput();"; value="Search"><br />  -->
+
+    <br>
+
+
+    <!-- Label that displays the user's search criteria. -->
+    <p><span id='display'></span></p>
+
+
+    <table id="books" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>ISBN</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    </body>
+</div>
+
+</html>
