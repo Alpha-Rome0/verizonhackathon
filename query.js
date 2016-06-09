@@ -13,10 +13,10 @@ $(document).ready(function () {
         $("#books tbody").empty();
 
         $.ajax({
-            'url': 'http://localhost:8983/solr/demo/select',
+            'url': 'http://localhost:8983/solr/collection1/select',
             'data': {'wt': 'json', 'q': user_cat + ":" + document.getElementById("user_input").value},
             'success': function (data) {
-                console.log(data.response.docs);
+                //console.log(data.response.docs);
                 console.log(user_cat + ":" + document.getElementById("user_input").value);
                 for (i = 0; i < data.response.docs.length; i++) {
                     var title = data.response.docs[i].name_txt;
