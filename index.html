@@ -3,8 +3,11 @@
       integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 <!DOCTYPE html>
+
     <html>
+
         <head>
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
             <script type='text/javascript' src='query.js'></script>
 
@@ -66,64 +69,68 @@
 
             </div>
 
+
             <div class="container-fluid" style="background-color: #FFFFF0;">
 
-            <br>
+                <br>
 
 
-            <!-- Labels and inputs for Categories and Search Item. -->
-            <label style="float: top;"><b>Search By: </b></label>
-            <select size="1" id="search" style="float: top;">
-                <option value=""> - Select -</option>
-                <option value="name_txt">Title</option>
-                <option value="author_txt">Author</option>
-                <option value="genre_s">Genre</option>
-                <option value="id">ISBN</option>
-                <option value="price">Price</option>
-            </select>
+                <!-- Labels and inputs for Categories and Search Item. -->
+                <label style="float: top;"><b>Search By: </b></label>
+
+                <select size="1" id="search" style="float: top;">
+                    <option value=""> - Select -</option>
+                    <option value="name_txt">Title</option>
+                    <option value="author_txt">Author</option>
+                    <option value="genre_s">Genre</option>
+                    <option value="id">ISBN</option>
+                    <option value="price">Price</option>
+                </select>
     
-            <br>
 
-            <label style="margin-top: 10px; float: top "><b>Search: </b></label>
-
-            <input type="text" name="message" id="user_input" style="float: top;">
-
-            <br>
+                <br>
 
 
-            <br>
+                <label style="margin-top: 10px; float: top "><b>Search: </b></label>
 
-            <button class="btn btn-primary" type="submit" id="click" style="float: top;">Search</button>
+                <input type="text" name="message" id="user_input" style="float: top;">
+
+
+                <br>
+
+                <br>
+
+
+                <button class="btn btn-primary" type="submit" id="click" style="float: top;">Search</button>
             
-            <!-- <input class="btn btn-primary" type="submit" onclick="showInput();"; value="Search"><br />  -->
-
-            <br>
+                <!-- <input class="btn btn-primary" type="submit" onclick="showInput();"; value="Search"><br />  -->
 
 
+                <br>
 
-            <div id="time"></div>
 
-                <!-- Label that displays the user's search criteria. -->
-                <p><span id='display'></span></p>
+                <div id="time"></div>
 
-                <table id="books" class="table table-striped" style="border: #B8860B;" >
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Genre</th>
-                            <th>Price</th>
-                            <th>ISBN</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <!-- Label that displays the user's search criteria. -->
+                    <p><span id='display'></span></p>
 
-                    </tbody>
-                </table>
+                    <table id="books" class="table table-striped" style="border: #B8860B;" >
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Price</th>
+                                <th>ISBN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-            </div>
+                        </tbody>
+                    </table>
+
+                </div>
 
         </body>
-      
 
     </html>
