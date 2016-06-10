@@ -10,6 +10,7 @@ $(document).ready(function () {
         user_cat=$(this).val();
     });
     $("button").click(function () {
+        var a = performance.now();
         $("#books tbody").empty();
 
         $.ajax({
@@ -39,6 +40,9 @@ $(document).ready(function () {
             'dataType': 'jsonp',
             'jsonp': 'json.wrf'
         });
+        var b = performance.now();
+        $("#time").empty();
+        $("#time").html('Search took ' + (b - a) + ' ms.')
     });
 });
 
