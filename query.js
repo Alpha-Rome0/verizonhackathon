@@ -1,4 +1,5 @@
 var user_cat;
+
 $(document).ready(function () {
     $("#user_input").keyup(function(event){
         if(event.keyCode == 13){
@@ -11,14 +12,28 @@ $(document).ready(function () {
     });
     $("button").click(function () {
         var a = performance.now();
+		var total;
+		var num;
         $("#books tbody").empty();
-
+		
+		$.ajax({
+            'url': 'http://localhost:8983/solr/collection1/select',
+            'data': {'wt': 'json', 'q': "*:*"},
+            'success': function (data) {
+                console.log(user_cat + ":" + document.getElementById("user_input").value);
+				total=data.response.numFound;
+				console.log(total);
+            },
+            'dataType': 'jsonp',
+            'jsonp': 'json.wrf'
+        });
         $.ajax({
             'url': 'http://localhost:8983/solr/collection1/select',
             'data': {'wt': 'json', 'q': user_cat + ":" + document.getElementById("user_input").value},
             'success': function (data) {
                 //console.log(data.response.docs);
                 console.log(user_cat + ":" + document.getElementById("user_input").value);
+				num=data.response.numFound;
                 for (i = 0; i < data.response.docs.length; i++) {
                     var title = data.response.docs[i].name_txt;
                     var isbn = data.response.docs[i].id;
@@ -35,14 +50,17 @@ $(document).ready(function () {
                         '</tr> ');
 
                 }
-
+				var percent=num/total*100;
+				$("#found").html('Percent match: '+ percent.toFixed(2)+"%")
             },
             'dataType': 'jsonp',
             'jsonp': 'json.wrf'
         });
         var b = performance.now();
-        $("#time").empty();
+        //$("#time").empty();
         $("#time").html('Search took ' + (b - a) + ' ms.')
+		
+		
     });
 });
 
